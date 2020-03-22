@@ -19,6 +19,4 @@ const client = new ApolloClient({
   link: ApolloLink.from([stateLink])
 });
 
-client.initQueryManager();
-
 export default client;
