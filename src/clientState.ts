@@ -81,3 +81,4 @@ export const resolvers = {
             return updatedNote;
         }
     }
+}
