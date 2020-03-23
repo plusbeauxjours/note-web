@@ -24,7 +24,7 @@ class Add extends React.Component<RouteComponentProps> {
       </Mutation>
     );
   }
-  public _onSave = (title, content) => {
+  public _onSave = (title: string, content: string) => {
     const { history } = this.props;
     if (title !== "" && content !== "") {
       this.createNote({ variables: { title, content } });

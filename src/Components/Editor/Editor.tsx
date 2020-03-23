@@ -32,7 +32,7 @@ const TitleContainer = styled.div`
 const Button = styled.button``;
 
 interface IProps {
-  onSave: (title: string, content: string) => void;
+  onSave: (title: string, content: string, id?: string) => void;
   propsId?: string;
   propsTitle?: string;
   propsContent?: string;
@@ -44,6 +44,7 @@ const Editor: React.FunctionComponent<IProps> = ({
   propsTitle,
   propsContent
 }) => {
+  const [id, setId] = useState<string>(propsTitle || "");
   const [title, setTitle] = useState<string>(propsTitle || "");
   const [content, setContent] = useState<string>(propsContent || "");
 
@@ -53,13 +54,15 @@ const Editor: React.FunctionComponent<IProps> = ({
       setTitle(value);
     } else if (name === "content") {
       setContent(value);
+    } else if (name === "id") {
+      setId(value);
     } else {
       return;
     }
   };
 
   const _onSave = () => {
-    onSave(title, content);
+    onSave(title, content, id);
   };
   return (
     <>
