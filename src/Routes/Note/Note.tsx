@@ -35,7 +35,7 @@ const Note: React.SFC<RouteComponentProps<MatchParams>> = ({ match }) => {
         data ? (
           <>
             <TitleComponent>
-              <Title>{data.note & data.note.title}</Title>
+              <Title>{data.note && data.note.title}</Title>
               <Link to={`/edit/${data.note.id}`}>
                 <Button>Edit</Button>
               </Link>
