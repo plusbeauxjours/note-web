@@ -27,9 +27,12 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+  height: 80px;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  border: 1px solid black;
+`;
 
 interface IProps {
   onSave: (title: string, content: string, id?: string) => void;
@@ -44,10 +47,9 @@ const Editor: React.FunctionComponent<IProps> = ({
   propsTitle,
   propsContent
 }) => {
-  const [id, setId] = useState<string>(propsTitle || "");
+  const [id, setId] = useState<string>(propsId || "");
   const [title, setTitle] = useState<string>(propsTitle || "");
   const [content, setContent] = useState<string>(propsContent || "");
-
   const _onInputChange = event => {
     const { name, value } = event.target;
     if (name === "title") {
@@ -64,6 +66,7 @@ const Editor: React.FunctionComponent<IProps> = ({
   const _onSave = () => {
     onSave(title, content, id);
   };
+
   return (
     <>
       <TitleContainer>

@@ -7,6 +7,7 @@ import { GET_NOTES } from "../../queries";
 
 const Header = styled.div`
   margin-bottom: 50px;
+  height: 80px;
 `;
 
 const Title = styled.h1`

@@ -11,6 +11,7 @@ const TitleComponent = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 50px;
+  height: 80px;
 `;
 
 const Title = styled.h1`
@@ -19,7 +20,9 @@ const Title = styled.h1`
   padding: 0;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  border: 1px solid black;
+`;
 
 interface MatchParams {
   id: string;

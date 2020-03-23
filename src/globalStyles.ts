@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
     ${reset};
     body{
-        background-color:#F7F5F3;
+        background-color:#fff5eb;
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color:var(--blackColor);
         padding:50px 100px;

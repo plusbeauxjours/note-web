@@ -15,7 +15,7 @@ export const EDIT_NOTE = gql`
 
 class Edit extends React.Component<RouteComponentProps> {
   public editNote: MutationFunction;
-  render() {
+  public render() {
     const {
       match: {
         params: { id }
@@ -43,7 +43,7 @@ class Edit extends React.Component<RouteComponentProps> {
       </Query>
     );
   }
-  _onSave = (title: string, content: string, id: string) => {
+  public _onSave = (title: string, content: string, id: string) => {
     const {
       history: { push }
     } = this.props;
