@@ -34,6 +34,12 @@ const Subtitle = styled.h2`
   font-weight: 400;
 `;
 
+const Notes = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
 const Note = styled.div`
   padding: 10px;
   padding-left: 5px;
@@ -44,6 +50,12 @@ const Note = styled.div`
   &:hover {
     background-color: #eeeeee;
   }
+`;
+
+const NoteTitle = styled.span`
+  padding-bottom: 5px;
+  font-weight: 600;
+  font-size: 20px;
 `;
 
 const NotesContainer: React.FunctionComponent = () => {
@@ -60,17 +72,21 @@ const NotesContainer: React.FunctionComponent = () => {
         </Title>
         <Subtitle>Taking notes while we learn</Subtitle>
       </Header>
-      <Query query={GET_NOTES}>
-        {({ data }) =>
-          data.notes
-            ? data.notes.map(note => (
-                <Link to={`/edit/${note.id}`} key={note.id}>
-                  <Note>{note.title}</Note>
-                </Link>
-              ))
-            : null
-        }
-      </Query>
+      <Notes>
+        <Query query={GET_NOTES}>
+          {({ data }) =>
+            data.notes
+              ? data.notes.map(note => (
+                  <Link to={`/note/${note.id}`} key={note.id}>
+                    <Note>
+                      <NoteTitle>{note.title}</NoteTitle>
+                    </Note>
+                  </Link>
+                ))
+              : null
+          }
+        </Query>
+      </Notes>
     </>
   );
 };
